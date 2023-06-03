@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jira Simplify</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <img id="logo" src="../images/logo.png" alt="Logo" />
+      <h1>Jira Simplify</h1>
+      <img id="settings-icon" src="../images/cog.png" alt="Settings" title="Settings" />
+    </header>
+
+    <p id="error-message"></p>
+
+    <section id="settings">
+      <form id="api-key-form">
+        <label for="api-key-input">Enter your OpenAI API key</label>
+        <input type="password" id="api-key-input" name="api-key-input" required />
+        <input type="submit" value="Submit" />
+      </form>
+    </section>
+
+    <section id="main-content">
+      <p id="intro">Ticket details found on the page</p>
+      <div id="issue">
+        <h2 id="issue-title"></h2>
+        <p id="issue-preview"></p>
+
+        <span id="issue-content"></span>
+      </div>
+      <button id="analyse">Analyse Jira Issue</button>
+      
+      <div id="analysis-output">
+        <h2>AI Analysis</h2>
+        <p id="openai-content"><img id="spinner" src="../images/spinner.svg"></p>
+      </div>
+    </section>
+    
+    <script type="module" src="../js/lib/axios.min.js"></script>
+    <script type="module" src="../js/popup.js"></script>
+  </body>
+</html>

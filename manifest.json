@@ -1,0 +1,41 @@
+{
+    "manifest_version": 3,
+    "name": "Jira Browser Extension",
+    "version": "1.0.0",
+    "description": "A tool to summarise Jira issues",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "webRequest"
+    ],
+    "host_permissions": [
+        "https://*.atlassian.net/*"
+    ],
+    "action": {
+        "default_popup": "html/popup.html",
+        "default_icon": {
+            "16": "images/icon16.png",
+            "48": "images/icon48.png",
+            "128": "images/icon128.png"
+        }
+    },
+    "background": {
+        "service_worker": "js/background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.atlassian.net/*"
+            ],
+            "js": [
+                "js/content.js"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    }
+}
+  
